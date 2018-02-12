@@ -1,0 +1,5 @@
+[
+    {"id":1,"title":"HTML5 for iOS and Android","isbn":" 978-0071756334","author":"Robin Nixon","price":25.6},
+    {"id":2,"title":"PHP for the Web: Visual QuickStart Guide (5th Edition)","isbn":"978-0134291253","author":"Larry Ullman","price":45.1},
+    {"id":3,"title":"Learning PHP, MySQL & JavaScript","isbn":"978-1491918661","author":"Robin Nixon","price":90.2}
+]
