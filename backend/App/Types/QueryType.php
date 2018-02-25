@@ -4,10 +4,10 @@ use App\Type;
 use App\Data;
 use GraphQL\Type\Definition\ObjectType;
 
-/*
+/**
  * Class QueryType
  *
- * Класс query запроса
+ * Query type class
  *
  */
 class QueryType extends ObjectType

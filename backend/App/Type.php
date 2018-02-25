@@ -3,10 +3,10 @@
 use App\Types\BookType;
 use GraphQL\Type\Definition\Type as BaseType;
 
-/*
+/**
  * Class Types
  *
- * Типы объектов для запросов
+ * Object types for requests
  *
  */
 class Type extends BaseType

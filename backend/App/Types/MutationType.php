@@ -4,10 +4,10 @@ use App\Type;
 use App\Data;
 use GraphQL\Type\Definition\ObjectType;
 
-/*
+/**
  * Class MutationType
  *
- * Класс mutation запроса
+ * Mutation requests class
  *
  */
 class MutationType extends ObjectType
@@ -27,6 +27,12 @@ class MutationType extends ObjectType
                             'author' => Type::string(),
                             'price' => Type::float(),
                         ],
+                        /**
+                         * Closure для возврата данных запроса. Можно легко заменить на любой тип данных, например результат выполнения sql запроса к базе данных.
+                         * Возвращаемые значения: массив объектов, в случае, если тип запроса это список типов объектов (Type::listOf(<object type>)) или объект в случае, если тип запроса это одиночный тип объекта
+                         *
+                         *
+                         */
                         'resolve' => function ($root, $args) {
                             if (!isset($args['id'])) {
                                 throw new \Exception('ID parameter is required');
