@@ -1,4 +1,6 @@
-/vendor
+backend/vendor
+frontend/dist
+frontend/node_modules
 composer.phar
 .idea
 .DS_Store
