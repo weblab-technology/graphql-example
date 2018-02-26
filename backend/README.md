@@ -1,8 +1,8 @@
-# Пример работы GraphQL
+# GraphQL work example
 
-Примеры запросов:
+Requests example:
 
-1. Список:
+1. Records list receive:
    query {
      books {
        id
@@ -11,7 +11,7 @@
        author
      }
    }
-2. Поиск по автору:
+2. Search records by author field:
    query {
      books(author: "Robin Nixon") {
        id
@@ -20,7 +20,7 @@
        author
      }
    }
-3. Изменение аттрибутов записи:
+3. Update record attributes:
    mutation {
      book_update(id: 3, author: "New author", title: "New title") {
        id

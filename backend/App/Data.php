@@ -1,9 +1,9 @@
 <?php namespace App;
 
-/*
+/**
  * Class Data
  *
- * Работа с данными json
+ * Working with json data
  */
 class Data
 {
@@ -13,8 +13,8 @@ class Data
 
     protected $key = 'id';
 
-   /*
-    * Загрузка данных из json файла
+   /**
+    * Loading data from json file
     *
     * @return App\Data
     */
@@ -27,8 +27,8 @@ class Data
         return $data;
     }
 
-   /*
-    * Запись массива $items в json файл
+   /**
+    * Writing an $ items array to a json file
     *
     * @void
     */
@@ -38,8 +38,8 @@ class Data
         file_put_contents(self::JSON_DATA_PATH, $jsonData);
     }
 
-   /*
-    * Фильтрация загруженных данных по массиву параметров из запроса
+   /**
+    * Loaded data filtering on an array of parameters from the request
     *
     * @param array $args
     * @return array
@@ -57,8 +57,8 @@ class Data
         return $result;
     }
 
-   /*
-    * Обновление записи по ключу
+   /**
+    * Update record by a key
     *
     * @param int $id
     * @param array $data

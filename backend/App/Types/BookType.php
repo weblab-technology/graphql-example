@@ -3,10 +3,10 @@
 use App\Type;
 use GraphQL\Type\Definition\ObjectType;
 
-/*
+/**
  * Class BookType
  *
- * Класс типа возвращаемого объекта с определенными полями
+ * Type of returned objects class with custom fields
  *
  */
 class BookType extends ObjectType
@@ -23,6 +23,7 @@ class BookType extends ObjectType
                     'type' => Type::string(),
                     'description' => 'Book title',
                 ],
+
                 'isbn' => [
                     'type' => Type::string(),
                     'description' => 'ISBN',
@@ -30,6 +31,10 @@ class BookType extends ObjectType
                 'author' => [
                     'type' => Type::string(),
                     'description' => 'Book author',
+                ],
+                'author_name' => [
+                    'type' => Type::string(),
+                    'deprecationReason' => 'Deprecated. Use author field',
                 ],
                 'price' => [
                     'type' => Type::float(),
