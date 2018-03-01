@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  app:
+     restart: 'always'
+     image: php:7.1
+     command: php -S localhost:8888 /backend/index.php
+     volumes:
+       - ./backend/:/backend
+     ports:
+       - '8888:8888'
+     working_dir: /backend
+  composer:
+      restart: 'no'
+      image: composer:latest
+      command: install
+      volumes:
+       - ./backend/:/backend
+      working_dir: /backend
