@@ -4,7 +4,7 @@ services:
   app:
      restart: 'always'
      image: php:7.1
-     command: php -S localhost:8888 /backend/index.php
+     command: php -S 0.0.0.0:8888 /backend/index.php
      volumes:
        - ./backend/:/backend
      ports:
