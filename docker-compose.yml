@@ -17,3 +17,9 @@ services:
       volumes:
        - ./backend/:/backend
       working_dir: /backend
+  web:
+     build:
+        context: ./frontend
+        dockerfile: dockerfile
+     ports:
+       - '8080:8080'
