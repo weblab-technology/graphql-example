@@ -1,6 +1,6 @@
 import {graphql} from './../utils/graphql';
 
-const client = graphql('http://graphql.loc');
+const client = graphql(process.env.API_URL || 'http://127.0.0.1:8888');
 
 export const loadAll = () => {
   const query = `

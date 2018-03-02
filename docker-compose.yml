@@ -1,25 +1,30 @@
 version: '2'
 
 services:
-  app:
-     restart: 'always'
-     image: php:7.1
-     command: php -S 0.0.0.0:8888 /backend/index.php
-     volumes:
-       - ./backend/:/backend
-     ports:
-       - '8888:8888'
-     working_dir: /backend
+  backend:
+    restart: 'always'
+    image: php:7.1
+    command: php -S 0.0.0.0:8888 /backend/index.php
+    volumes:
+     - ./backend/:/backend
+    ports:
+     - '8888:8888'
+    working_dir: /backend
   composer:
-      restart: 'no'
-      image: composer:latest
-      command: install
-      volumes:
-       - ./backend/:/backend
-      working_dir: /backend
-  web:
-     build:
-        context: ./frontend
-        dockerfile: dockerfile
-     ports:
-       - '8080:8080'
+    restart: 'no'
+    image: composer:latest
+    command: install
+    volumes:
+     - ./backend/:/backend
+    working_dir: /backend
+  frontend:
+    image: node:carbon
+    command: npm run boot
+    ports:
+     - '8080:8080'
+    tty: true
+    volumes:
+     - ./frontend:/frontend
+    depends_on:
+     - backend
+    working_dir: /frontend
