@@ -42,7 +42,6 @@ export default class App extends Component {
 
   onUpdateBook = (id, author, name) => {
     update(id, author, name).then( response => {
-      console.log(response);
       this.setState({
         books: this.state.books.map( book => book.id !== id? book: response.data.book_update),
       })
@@ -51,8 +50,6 @@ export default class App extends Component {
 
   render() {
     const { filterText, books } = this.state;
-
-    console.log(books);
 
     return (
       <div className={styles.container}>

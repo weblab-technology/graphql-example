@@ -1,11 +1,11 @@
 
 .form {
-  display: block;
+  display: flex;
   flex: 0 0 50px;
 }
 
 .input {
-  width: 100%;
+  flex: 1 1 0%;
   height: 50px;
   background: #fff;
   font-family: Arial, sans-serif;
@@ -21,4 +21,29 @@
 
 .input:focus {
   outline: none !important;
+}
+
+.button {
+  flex: 0 0 100px;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 50px;
+  line-height: 48px;
+  color: #fff !important;
+  text-decoration: none !important;
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 10px;
+  background: #007bff;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.9;
 }

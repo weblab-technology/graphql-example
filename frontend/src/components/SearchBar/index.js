@@ -8,17 +8,44 @@ export default class SearchBar extends Component {
     onFilter: PropTypes.func,
   };
 
+  static defaultProps = {
+    value: ''
+  };
+
+  state = {
+    value: this.props.filterText,
+  };
+
   handleChange = (e) => {
-    this.props.onFilter(e.target.value);
+    this.setState({
+      value: e.target.value,
+    })
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onFilter(this.state.value);
   };
 
   render() {
-    const { filterText } = this.props;
+    const { value } = this.state;
 
     return (
-      <div className={styles.form}>
-        <input value={filterText} onChange={this.handleChange} autoFocus type="text" className={styles.input}/>
-      </div>
+      <form
+        onSubmit={this.handleSubmit}
+        className={styles.form}
+      >
+        <input
+          type="text"
+          autoFocus
+          className={styles.input}
+          value={value}
+          onChange={this.handleChange}
+        />
+        <button className={styles.button} type="submit">
+          Search
+        </button>
+      </form>
     )
   }
 }
